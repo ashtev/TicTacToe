@@ -36,14 +36,14 @@ namespace TicTacToe
         {
             if (symbol.Equals("O"))
             {
-                return System.Drawing.Color.Peru;
+                return System.Drawing.Color.WhiteSmoke;
             }
             else if(symbol.Equals("X"))
             {
-                return System.Drawing.Color.SandyBrown;
+                return System.Drawing.Color.DimGray;
 
             }
-            return System.Drawing.Color.Sienna;
+            return System.Drawing.Color.LightGray;
         }
 
         public void checkForWinner()
@@ -218,15 +218,15 @@ namespace TicTacToe
             button7.Text = "";
             button8.Text = "";
             button9.Text = "";
-            button1.BackColor = System.Drawing.Color.Bisque;
-            button2.BackColor = System.Drawing.Color.Bisque;
-            button3.BackColor = System.Drawing.Color.Bisque;
-            button4.BackColor = System.Drawing.Color.Bisque;
-            button5.BackColor = System.Drawing.Color.Bisque;
-            button6.BackColor = System.Drawing.Color.Bisque;
-            button7.BackColor = System.Drawing.Color.Bisque;
-            button8.BackColor = System.Drawing.Color.Bisque;
-            button9.BackColor = System.Drawing.Color.Bisque;
+            button1.BackColor = System.Drawing.Color.DimGray;
+            button2.BackColor = System.Drawing.Color.DimGray;
+            button3.BackColor = System.Drawing.Color.DimGray;
+            button4.BackColor = System.Drawing.Color.DimGray;
+            button5.BackColor = System.Drawing.Color.DimGray;
+            button6.BackColor = System.Drawing.Color.DimGray;
+            button7.BackColor = System.Drawing.Color.DimGray;
+            button8.BackColor = System.Drawing.Color.DimGray;
+            button9.BackColor = System.Drawing.Color.DimGray;
             
             gameBoard = new string[9];
             currentTurn = 0;
@@ -237,23 +237,23 @@ namespace TicTacToe
             switch (number)
             {
                 case 0:
-                    button1.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button1.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 1:
-                    button2.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button2.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 2:
-                    button3.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button3.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 3:
-                    button4.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button4.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 4:
-                    button5.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button5.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 5:
-                    button6.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button6.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 6:
-                    button7.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button7.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 7:
-                    button8.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button8.BackColor = System.Drawing.Color.AntiqueWhite; break;
                 case 8:
-                    button9.BackColor = System.Drawing.Color.NavajoWhite; break;
+                    button9.BackColor = System.Drawing.Color.AntiqueWhite; break;
             }
         }
 
@@ -383,6 +383,11 @@ namespace TicTacToe
         private void button10_Click(object sender, EventArgs e)
         {
             reset();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
