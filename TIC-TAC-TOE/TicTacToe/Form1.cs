@@ -17,10 +17,10 @@ namespace TicTacToe
             InitializeComponent();
         }
 
-        String[] gameBoard = new string[9];
-        int currentTurn = 0;
+        String[] gameBoard = new string[9]; //array to hold the game board
+        int currentTurn = 0; //keeping track of whose turn it is
 
-        public String returnSymbol(int turn)
+        public String returnSymbol(int turn) //method that will return the symbol that is assigned to the button
         {
             if (turn % 2 == 0)
             {
@@ -32,7 +32,7 @@ namespace TicTacToe
             }
         }
 
-        public System.Drawing.Color determineColor(String symbol)
+        public System.Drawing.Color determineColor(String symbol) //method that will determine the color based on the symbol assigned
         {
             if (symbol.Equals("O"))
             {
@@ -46,14 +46,14 @@ namespace TicTacToe
             return System.Drawing.Color.LightGray;
         }
 
-        public void checkForWinner()
+        public void checkForWinner() //method that will check which is the winner
         {
             for(int i=0; i<8; i++)
             {
-                String combination = "";
-                int one = 0, two = 0, three =0;
-                switch(i)
-                {
+                String combination = ""; //represents the line of combination for the switch case below
+                int one = 0, two = 0, three =0; //initialize to nothing
+                switch (i) //determines the combination wheter its diagonal, horizontal, or vertical
+                { //gameboard[n] represents the buttons
                     case 0:
                         combination = gameBoard[0] + gameBoard[4] + gameBoard[8];
                         one = 0;
@@ -157,10 +157,10 @@ namespace TicTacToe
                         three = 1;
                         break;
                 }
-               
 
 
-                if(combination.Equals("OOO"))
+                //displays that O is the winner
+                if (combination.Equals("OOO"))
                 {
                     changeColor(one);
                     changeColor(two);
@@ -176,7 +176,7 @@ namespace TicTacToe
                     button9.Enabled = false;
                     MessageBox.Show("O has won the game!", "We have a winner!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);      
                 }
-                else if (combination.Equals("XXX"))
+                else if (combination.Equals("XXX")) //displays that X is the winner
                 {
                     changeColor(one);
                     changeColor(two);
@@ -198,7 +198,7 @@ namespace TicTacToe
 
 
         }
-        public void reset()
+        public void reset() //reset button
         {
             button1.Enabled = true;
             button2.Enabled = true;
@@ -232,7 +232,7 @@ namespace TicTacToe
             currentTurn = 0;
         }
 
-        public void changeColor(int number)
+        public void changeColor(int number) //method changes the color of the winner's combination to white
         {
             switch (number)
             {
@@ -279,7 +279,7 @@ namespace TicTacToe
                 }
             }    
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //checking if the game results into draw
         {
             currentTurn++;
             gameBoard[0] = returnSymbol(currentTurn);
@@ -290,16 +290,16 @@ namespace TicTacToe
             checkForWinner();
 
         }
-
+        //buttons
         private void button2_Click(object sender, EventArgs e)
-        {
-            currentTurn++;
-            gameBoard[1] = returnSymbol(currentTurn);
-            Color buttonColor = determineColor(gameBoard[1]);
+        { //applies to all buttons
+            currentTurn++; 
+            gameBoard[1] = returnSymbol(currentTurn); //determines the turn whether its X or O
+            Color buttonColor = determineColor(gameBoard[1]); //checks if the color of the button needs to be white or gray depending on the symbol
             button2.BackColor = buttonColor;
             button2.Text = gameBoard[1];;
-            button2.Enabled = false;
-            checkForWinner();
+            button2.Enabled = false; //disables the button after the click
+            checkForWinner(); //checks the winner
         }
 
         private void button3_Click(object sender, EventArgs e)
